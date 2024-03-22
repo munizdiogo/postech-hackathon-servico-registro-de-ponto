@@ -1,0 +1,2 @@
+RewriteEngine On
+RedirectMatch ^/(cadastro|registro-de-ponto)(/.*)?$ /
