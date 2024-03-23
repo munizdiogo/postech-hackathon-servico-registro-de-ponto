@@ -1,0 +1,16 @@
+/vendor/
+/.idea/
+/.vscode/
+/.project
+/.classpath
+/logs/
+/tmp/
+*.log
+/data/
+/generated/
+/target/
+/build/
+/out/
+/composer.lock
+/coverage
+/.phpunit.result.cache
