@@ -7,28 +7,18 @@ on:
   workflow_dispatch:
 
 jobs:
-  # unit-tests:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v3
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+     - name: Checkout
+       uses: actions/checkout@v3
 
-  #     - name: Run unit tests
-  #       run: composer install && ./vendor/bin/phpunit --testdox tests --colors
-
-  # bdd-tests:
-  #   runs-on: ubuntu-latest
-  #   needs: unit-tests
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v3
-
-  #     - name: Run BDD tests
-  #       run: composer install &&  ./vendor/bin/behat
-
+     - name: Run unit tests
+       run: composer install && ./vendor/bin/phpunit --testdox tests --colors
+       
   update-image-aws-ecr:
     runs-on: ubuntu-latest
-    # needs: bdd-tests
+    needs: unit-tests
 
     steps:
       - name: Checkout
