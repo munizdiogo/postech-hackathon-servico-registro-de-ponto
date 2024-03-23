@@ -16,16 +16,6 @@ $dbConnection = new MySqlConnection();
 $registroDePontoController = new RegistroDePontoController();
 $colaboradorController = new ColaboradorController();
 
-$cpf = !empty($_POST["cpf"]) ? $_POST["cpf"] : (!empty($_GET["cpf"]) ? $_GET["cpf"] : null);
-
-$headers = apache_request_headers();
-$token = $headers["Authorization"];
-
-if (empty($token)) {
-    retornarRespostaJSON("Não autorizado. Nenhum token informado.", 401);
-    exit;
-}
-
 if (!empty($_GET["acao"])) {
     switch ($_GET["acao"]) {
         case "registrar":
